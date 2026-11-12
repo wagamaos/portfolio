@@ -3,426 +3,102 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Wang Yi Heng (Roman Sterling) — Creative Web Developer and Cybersecurity Student Portfolio.">
+    <meta name="description" content="Wang Yi Heng's portfolio of web development projects.">
     <meta name="theme-color" content="#520c17">
-    <meta property="og:title" content="Wang Yi Heng | Creative Web Developer Portfolio">
-    <meta property="og:description" content="Refined, purposeful, and visually engaging digital experiences.">
-    <meta property="og:type" content="website">
-    <title>Wang Yi Heng | Portfolio &amp; Creative Web Design</title>
+    <title>Wang Yi Heng | Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
   </head>
   <body>
-    <!-- Skip to content for keyboard accessibility -->
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <div class="site-canvas">
-      <!-- ① Semantic HTML: <header> -->
-      <header class="site-header" id="top">
+      <header class="site-header">
         <div class="header-inner">
-          <a class="wordmark" href="#hero" aria-label="Protfix Wang Yi Heng, Home">
-            <span class="logo-mark" aria-hidden="true">✕</span>
-            <span class="logo-text">PROTFIX</span>
-          </a>
-
-          <!-- ① Semantic HTML: <nav> -->
+          <a class="wordmark" href="#home">Wang Yi Heng</a>
           <nav aria-label="Main navigation">
-            <a href="#hero">Hero</a>
             <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
+            <a href="#work">Projects</a>
           </nav>
-
-          <div class="header-actions">
-            <!-- ③ JS Interaction: Dark / Color Theme Toggle -->
-            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Switch to light cream theme" type="button" aria-pressed="false" title="Toggle theme mode">
-              <svg class="theme-icon icon-sun" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5"></circle>
-                <line x1="12" y1="1" x2="12" y2="3"></line>
-                <line x1="12" y1="21" x2="12" y2="23"></line>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                <line x1="1" y1="12" x2="3" y2="12"></line>
-                <line x1="21" y1="12" x2="23" y2="12"></line>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-              </svg>
-              <svg class="theme-icon icon-moon" aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-              </svg>
-              <span class="theme-toggle-text">Mode</span>
-            </button>
-
-            <a class="pill-btn pill-btn-primary" href="#work">
-              <span class="btn-arrow" aria-hidden="true">→</span>
-              <span>View My Work</span>
-            </a>
-          </div>
+          <a class="pill-btn pill-btn-primary" href="https://github.com/wagamaos" target="_blank" rel="noopener noreferrer">
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
         </div>
       </header>
 
-      <!-- ① Semantic HTML: <main> -->
       <main id="main" tabindex="-1">
-        <!-- HERO SECTION (Burgundy frame) -->
-        <section class="section-hero" id="hero" aria-labelledby="hero-name">
-          <!-- Left social vertical rail -->
-          <aside class="hero-rail" aria-label="Social profiles">
-            <ul class="rail-links">
-              <li><a href="https://github.com/wagamaos" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in new tab)">GH</a></li>
-              <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in new tab)">IN</a></li>
-              <li><a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X Twitter profile (opens in new tab)">X</a></li>
-              <li><a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" aria-label="Pinterest profile (opens in new tab)">PIN</a></li>
-            </ul>
-
-            <!-- Circular rotating badge / stamp -->
-            <div class="circular-seal" aria-hidden="true">
-              <svg class="seal-svg" viewBox="0 0 120 120">
-                <path id="seal-circle" d="M 60, 60 m -45, 0 a 45,45 0 1,1 90,0 a 45,45 0 1,1 -90,0" fill="none" />
-                <text class="seal-text">
-                  <textPath href="#seal-circle" startOffset="0%">
-                    CREATIVE WEB DESIGNER · CYBERSECURITY · 
-                  </textPath>
-                </text>
-              </svg>
-              <div class="seal-center">
-                <span>✕</span>
-              </div>
-            </div>
-          </aside>
-
-          <!-- Center portrait image -->
-          <div class="hero-visual">
-            <div class="portrait-wrapper">
-              <!-- ⑤ Meaningful Alt Text -->
-              <img
-                class="hero-portrait"
-                src="assets/hero-portrait.jpg"
-                alt="Editorial portrait of creative web designer wearing sunglasses and burgundy jacket"
-                width="380"
-                height="460"
-              >
+        <section class="section-hero" id="home" aria-labelledby="hero-name">
+          <div class="hero-content">
+            <p class="hero-lead"><span class="hero-dot" aria-hidden="true"></span> Cybersecurity student &amp; web developer</p>
+            <h1 class="hero-signature" id="hero-name">
+              <span>Wang Yi</span>
+              <span class="sig-last">Heng<span class="hero-period">.</span></span>
+            </h1>
+            <p class="hero-summary">I build useful, interactive web projects with a focus on technology and thoughtful experiences.</p>
+            <div class="hero-actions">
+              <a class="pill-btn pill-btn-primary" href="#work">Explore my projects <span aria-hidden="true">↓</span></a>
+              <a class="hero-link" href="https://github.com/wagamaos" target="_blank" rel="noopener noreferrer">Find me on GitHub <span aria-hidden="true">↗</span></a>
             </div>
           </div>
-
-          <!-- Right headline & bio -->
-          <div class="hero-content">
-            <p class="hero-lead">
-              I’m a creative web designer focused on building refined, purposeful, and visually engaging digital experiences.
-            </p>
-            <h1 class="hero-signature" id="hero-name">
-              <span class="sig-copy">©</span>
-              <span class="sig-first">WANG YI HENG</span>
-              <span class="sig-last">ROMAN STERLING</span>
-            </h1>
+          <div class="hero-art" aria-hidden="true">
+            <span class="art-initials">WYH</span>
+            <span class="art-ring art-ring-one"></span>
+            <span class="art-ring art-ring-two"></span>
+            <span class="art-star">✳</span>
           </div>
         </section>
 
-        <!-- ABOUT ME SECTION (Butter Cream #fae896 background) -->
         <section class="section-about" id="about" aria-labelledby="about-heading">
           <div class="about-container">
-            <div class="about-header">
-              <h2 id="about-heading">ABOUT ME</h2>
-            </div>
-
-            <div class="about-grid">
-              <!-- Column 01: Who I am -->
-              <article class="about-col">
-                <span class="col-number">01</span>
-                <h3>Who I Am</h3>
-                <p>I’m a cybersecurity student and creative web developer passionate about transforming ideas into thoughtful, secure digital products.</p>
-              </article>
-
-              <!-- Column 02: My journey -->
-              <article class="about-col">
-                <span class="col-number">02</span>
-                <h3>My Journey</h3>
-                <p>I’ve been working with modern web design, responsive CSS, and accessible user experiences for the past 3 years throughout coursework and live projects.</p>
-              </article>
-
-              <!-- Column 03: My approach -->
-              <article class="about-col col-cta">
-                <span class="col-number">03</span>
-                <h3>My Approach</h3>
-                <p>I believe great design is about finding the right balance between bold aesthetics, seamless functionality, and universal accessibility.</p>
-                <a class="pill-btn pill-btn-dark" href="#contact">
-                  <span class="btn-arrow" aria-hidden="true">→</span>
-                  <span>Get To Know Me</span>
-                </a>
-              </article>
-            </div>
-
-            <!-- Inset photo peeking into about section -->
-            <div class="about-inset-photo">
-              <!-- ⑤ Meaningful Alt Text -->
-              <img
-                src="assets/about-portrait.jpg"
-                alt="Portrait detail of designer in high-contrast editorial lighting"
-                width="220"
-                height="150"
-              >
-            </div>
+            <p class="section-kicker">A little about me</p>
+            <h2 id="about-heading">Curious by nature.<br>Builder by practice.</h2>
+            <p class="about-summary">I’m a cybersecurity student and web developer interested in building useful, interactive web projects.</p>
           </div>
         </section>
 
-        <!-- TIMELINE / BUILT THROUGH EXPERIENCE (Burgundy background) -->
-        <section class="section-timeline" id="experience" aria-labelledby="timeline-heading">
-          <div class="timeline-container">
-            <div class="timeline-intro">
-              <p class="section-eyebrow">Design Prototype</p>
-              <h2 id="timeline-heading">Built Through Experience</h2>
-              <p class="timeline-desc">
-                My journey into digital design began with a simple curiosity about how visual ideas can turn into experiences. Today, I craft accessible web systems that combine aesthetics, cybersecurity, and clean code.
-              </p>
-            </div>
-
-            <!-- Milestone grid matching the mockup (2016, 2018, 2022, 2026) -->
-            <div class="timeline-grid">
-              <!-- 2016 -->
-              <article class="year-card outline-card">
-                <span class="year-numeral">2016</span>
-                <span class="card-tag">The Beginning</span>
-                <p>My journey into digital design started with raw curiosity and a passion for visual aesthetics.</p>
-              </article>
-
-              <!-- 2018 (Filled Cream Card) -->
-              <article class="year-card filled-card">
-                <span class="year-numeral">2018</span>
-                <span class="card-tag">Discovering Web &amp; Code</span>
-                <p>Transitioned from static layouts to building responsive, interactive web interfaces with modern HTML, CSS, and JavaScript.</p>
-              </article>
-
-              <!-- 2022 -->
-              <article class="year-card outline-card">
-                <span class="year-numeral">2022</span>
-                <span class="card-tag">Finding My Style</span>
-                <p>Sharpened my focus on accessible design (WCAG AA), typography, and secure front-end architecture.</p>
-              </article>
-
-              <!-- 2026 (Card with portrait thumbnail) -->
-              <article class="year-card outline-card card-with-photo">
-                <div class="card-text-side">
-                  <span class="year-numeral">2026</span>
-                  <span class="card-tag">Building With Purpose</span>
-                  <p>Crafting polished, high-performance web applications that leave a lasting impression.</p>
-                </div>
-                <div class="card-photo-side">
-                  <!-- ⑤ Meaningful Alt Text -->
-                  <img
-                    src="assets/timeline-portrait.jpg"
-                    alt="Creative designer in yellow puffer jacket against mustard backdrop"
-                    width="110"
-                    height="140"
-                  >
-                </div>
-              </article>
-            </div>
-          </div>
-        </section>
-
-        <!-- SELECTED WORK / PROJECTS (Cream & Burgundy) -->
         <section class="section-work" id="work" aria-labelledby="work-heading">
-          <div class="work-container">
-            <div class="work-header">
-              <div>
-                <p class="section-eyebrow">Selected Coursework</p>
-                <h2 id="work-heading">Featured Projects</h2>
-              </div>
-              <!-- ③ JS Interaction: Category Filter Toolbar -->
-              <div class="project-filters" role="toolbar" aria-label="Filter projects by topic">
-                <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
-                <button type="button" class="filter-btn" data-filter="web-app" aria-pressed="false">Web App</button>
-                <button type="button" class="filter-btn" data-filter="interactive" aria-pressed="false">Interactive</button>
-                <button type="button" class="filter-btn" data-filter="events" aria-pressed="false">Events</button>
-                <button type="button" class="filter-btn" data-filter="campus" aria-pressed="false">Campus</button>
-              </div>
+          <div class="work-header">
+            <div>
+              <p class="section-kicker">Selected work</p>
+              <h2 id="work-heading">Projects<span class="hero-period">.</span></h2>
             </div>
-
-            <div id="filter-status" class="sr-only" aria-live="polite">Showing all 2 projects</div>
-
-            <div class="work-grid" id="project-list">
-              <!-- Project 1: Progression Board -->
-              <article class="project-card" data-category="web-app interactive events">
-                <div class="project-card-header">
-                  <span class="project-idx">01</span>
-                  <span class="project-badge">School Event Project</span>
-                </div>
-                <h3>Progression Board</h3>
-                <p>A live interactive game board engineered for school events, featuring an engaging player portal and a dedicated live controller view.</p>
-                <ul class="project-tag-list" aria-label="Progression Board technologies">
-                  <li>Web App</li>
-                  <li>Interactive</li>
-                  <li>Events</li>
-                </ul>
-                <div class="project-actions">
-                  <a class="pill-btn pill-btn-primary" href="https://progressionboard.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="Open Progression Board live project in a new tab">
-                    <span class="btn-arrow" aria-hidden="true">↗</span>
-                    <span>Open Project</span>
-                  </a>
-                  <a class="pill-btn pill-btn-outline" href="https://progressionboard.netlify.app/controller" target="_blank" rel="noopener noreferrer" aria-label="Open Progression Board controller view in a new tab">
-                    <span>Controller View</span>
-                  </a>
-                </div>
-              </article>
-
-              <!-- Project 2: Landed Campus Companion -->
-              <article class="project-card" data-category="web-app interactive campus">
-                <div class="project-card-header">
-                  <span class="project-idx">02</span>
-                  <span class="project-badge">Web Development Coursework</span>
-                </div>
-                <h3>Landed Campus Companion</h3>
-                <p>A gamified campus companion empowering students to explore campus facilities, complete interactive quests, and organize academic milestones.</p>
-                <ul class="project-tag-list" aria-label="Landed Campus Companion technologies">
-                  <li>HTML &amp; CSS</li>
-                  <li>JavaScript</li>
-                  <li>Accessibility</li>
-                </ul>
-                <div class="project-actions">
-                  <a class="pill-btn pill-btn-primary" href="https://github.com/wagamaos/WDP_Project" target="_blank" rel="noopener noreferrer" aria-label="View Landed Campus Companion source repository on GitHub in a new tab">
-                    <span class="btn-arrow" aria-hidden="true">↗</span>
-                    <span>View Source Code</span>
-                  </a>
-                </div>
-              </article>
-            </div>
+            <p class="work-intro">A couple of things I’ve been working on.</p>
           </div>
-        </section>
-
-        <!-- CONTACT SECTION: LET'S CREATE SOMETHING -->
-        <section class="section-contact" id="contact" aria-labelledby="contact-heading">
-          <div class="contact-container">
-            <div class="contact-info-col">
-              <h2 id="contact-heading">Let’s Create Something</h2>
-              <p class="contact-lead">
-                Have a project in mind, a collaboration to explore, or simply want to connect? Send a note and let’s make it happen.
-              </p>
-
-              <!-- Contact badge with avatar -->
-              <div class="contact-badge">
-                <!-- ⑤ Meaningful Alt Text -->
-                <img
-                  class="badge-avatar"
-                  src="assets/contact-avatar.jpg"
-                  alt="Avatar portrait of Wang Yi Heng"
-                  width="44"
-                  height="44"
-                >
-                <div class="badge-text">
-                  <a href="tel:+886912345678" class="badge-phone">+886 (0) 912 345 678</a>
-                  <a href="mailto:info@protfix.com" class="badge-email">info@protfix.com</a>
-                </div>
+          <div class="work-grid">
+            <article class="project-card">
+              <div class="project-card-header">
+                <span class="project-idx">01</span>
+                <span class="project-badge">School Event Project</span>
               </div>
-            </div>
-
-            <!-- Inquiry Form with accessible inputs -->
-            <form class="contact-form" id="inquiry-form" novalidate>
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="full-name">Full Name <span class="required" aria-hidden="true">*</span></label>
-                  <input type="text" id="full-name" name="name" placeholder="What’s your name?" required autocomplete="name">
-                </div>
-                <div class="form-group">
-                  <label for="email-address">Email Address <span class="required" aria-hidden="true">*</span></label>
-                  <input type="email" id="email-address" name="email" placeholder="you@domain.com" required autocomplete="email">
-                </div>
+              <h3>Progression Board</h3>
+              <p>An interactive game board for school events, with a player portal and a live controller.</p>
+              <div class="project-actions">
+                <a class="pill-btn pill-btn-primary" href="https://progressionboard.netlify.app/" target="_blank" rel="noopener noreferrer">Open Project <span aria-hidden="true">↗</span></a>
+                <a class="pill-btn pill-btn-outline" href="https://progressionboard.netlify.app/controller" target="_blank" rel="noopener noreferrer">Controller</a>
               </div>
+            </article>
 
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="project-name">Project Name <span class="required" aria-hidden="true">*</span></label>
-                  <input type="text" id="project-name" name="project" placeholder="Brief project title" required>
-                </div>
-                <div class="form-group">
-                  <label for="budget-range">Budget Range <span class="required" aria-hidden="true">*</span></label>
-                  <select id="budget-range" name="budget" required>
-                    <option value="" disabled selected>Select an estimate</option>
-                    <option value="1k-3k">$1,000 – $3,000</option>
-                    <option value="3k-5k">$3,000 – $5,000</option>
-                    <option value="5k+">$5,000+</option>
-                  </select>
-                </div>
+            <article class="project-card">
+              <div class="project-card-header">
+                <span class="project-idx">02</span>
+                <span class="project-badge">Coursework</span>
               </div>
-
-              <div class="form-group">
-                <label for="project-details">Project Details <span class="required" aria-hidden="true">*</span></label>
-                <textarea id="project-details" name="details" rows="3" placeholder="Tell me about your project, goals, and timeline..." required></textarea>
+              <h3>Landed Campus Companion</h3>
+              <p>A campus companion that helps students explore facilities, complete quests, and organize academic milestones.</p>
+              <div class="project-actions">
+                <a class="pill-btn pill-btn-primary" href="https://github.com/wagamaos/WDP_Project" target="_blank" rel="noopener noreferrer">View Source <span aria-hidden="true">↗</span></a>
               </div>
-
-              <div class="form-submit-row">
-                <button type="submit" class="pill-btn pill-btn-primary">
-                  <span class="btn-arrow" aria-hidden="true">→</span>
-                  <span>Submit Now</span>
-                </button>
-                <span id="form-feedback" class="form-feedback" role="status" aria-live="polite"></span>
-              </div>
-            </form>
+            </article>
           </div>
         </section>
       </main>
 
-      <!-- ① Semantic HTML: <footer> -->
       <footer class="site-footer">
-        <!-- Big CTA Card matching the mockup -->
-        <div class="footer-cta-card">
-          <h2>Let’s Bring Ideas To Life</h2>
-          <a class="pill-btn pill-btn-primary" href="#contact">
-            <span class="btn-arrow" aria-hidden="true">→</span>
-            <span>Contact Me Now</span>
-          </a>
-        </div>
-
-        <div class="footer-nav-grid">
-          <!-- Col 1: Essentials -->
-          <div class="footer-nav-col">
-            <span class="footer-col-title">Essentials</span>
-            <ul>
-              <li><a href="#hero">Home</a></li>
-              <li><a href="#about">About Me</a></li>
-              <li><a href="#work">My Work</a></li>
-              <li><a href="#experience">Services</a></li>
-              <li><a href="#contact">Contact Me</a></li>
-            </ul>
-          </div>
-
-          <!-- Col 2: Services / Focus -->
-          <div class="footer-nav-col">
-            <span class="footer-col-title">Services</span>
-            <ul>
-              <li><span>Web Design</span></li>
-              <li><span>UI/UX Design</span></li>
-              <li><span>Responsive Design</span></li>
-              <li><span>Figma Design</span></li>
-              <li><span>Visual Direction</span></li>
-            </ul>
-          </div>
-
-          <!-- Col 3: Social & Links -->
-          <div class="footer-nav-col">
-            <span class="footer-col-title">Social Net</span>
-            <ul>
-              <li><a href="https://github.com/wagamaos" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
-              <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></li>
-              <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram ↗</a></li>
-              <li><a href="https://x.com" target="_blank" rel="noopener noreferrer">X / Twitter ↗</a></li>
-              <li><a href="https://youtube.com" target="_blank" rel="noopener noreferrer">YouTube ↗</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="footer-bottom-bar">
-          <p>© <span id="current-year">2026</span> Protfix · Wang Yi Heng (Roman Sterling). All Rights Reserved.</p>
-          <div class="footer-legal">
-            <a href="#hero">Terms &amp; Conditions</a>
-            <span aria-hidden="true">·</span>
-            <a href="#hero">Privacy Policy</a>
-            <span aria-hidden="true">·</span>
-            <a href="#top" class="back-to-top" aria-label="Back to top of page">Back to top ↑</a>
-          </div>
-        </div>
+        <a class="footer-name" href="#home">Wang Yi Heng<span class="hero-period">.</span></a>
+        <p>© 2026 Wang Yi Heng</p>
+        <a href="https://github.com/wagamaos" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
       </footer>
     </div>
   </body>
