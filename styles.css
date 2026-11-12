@@ -339,3 +339,108 @@ a {
 .site-footer p {
   margin: 0;
 }
+
+:focus-visible {
+  outline: 3px solid #c46c1d;
+  outline-offset: 4px;
+}
+
+#main {
+  scroll-margin-top: 1rem;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 170px;
+    gap: 1.5rem;
+    padding: 3rem 2.5rem;
+  }
+
+  .portrait {
+    width: 145px;
+    height: 145px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-header,
+  .site-footer,
+  .section-wrap {
+    width: min(100% - 2rem, 1080px);
+  }
+
+  .site-header {
+    min-height: 70px;
+  }
+
+  .site-header nav {
+    gap: 1rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+    margin-top: 0.5rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
+
+  .portrait-frame {
+    grid-row: 1;
+    justify-items: start;
+  }
+
+  .portrait {
+    width: 112px;
+    height: 112px;
+    border-width: 5px;
+  }
+
+  .about,
+  .skills,
+  .projects {
+    padding-top: 3.5rem;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    min-height: 0;
+  }
+
+  .site-footer {
+    margin-top: 3.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header nav {
+    gap: 0.65rem;
+  }
+
+  .site-header nav a {
+    font-size: 0.82rem;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
