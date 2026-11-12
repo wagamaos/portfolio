@@ -1,72 +1,54 @@
-// Portfolio Interactions: Dark Mode Toggle, Project Filtering, and Accessibility Enhancements
+// Protfix / Wang Yi Heng Editorial Portfolio Scripts
 
 (function () {
   'use strict';
 
-  // --- 1. Dark Mode Toggle ---
+  // --- 1. Theme Mode Toggle (Wine/Burgundy vs Cream Inverted) ---
   const themeToggle = document.getElementById('theme-toggle');
   const root = document.documentElement;
-  const storageKey = 'portfolio-theme';
-
-  function getSystemPreference() {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
+  const storageKey = 'protfix-theme';
 
   function applyTheme(theme, save = true) {
-    root.setAttribute('data-theme', theme);
-    const isDark = theme === 'dark';
+    if (theme === 'light') {
+      root.setAttribute('data-theme', 'light');
+    } else {
+      root.removeAttribute('data-theme');
+    }
 
     if (themeToggle) {
-      themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-      const toggleText = themeToggle.querySelector('.theme-toggle-text');
-      if (toggleText) {
-        toggleText.textContent = isDark ? 'Light mode' : 'Dark mode';
-      }
+      const isLight = theme === 'light';
+      themeToggle.setAttribute('aria-pressed', isLight ? 'true' : 'false');
       themeToggle.setAttribute(
         'aria-label',
-        isDark ? 'Switch to light theme' : 'Switch to dark theme'
+        isLight ? 'Switch to dark wine theme' : 'Switch to light cream theme'
       );
+      const textSpan = themeToggle.querySelector('.theme-toggle-text');
+      if (textSpan) {
+        textSpan.textContent = isLight ? 'Wine Mode' : 'Cream Mode';
+      }
     }
 
     if (save) {
       try {
         localStorage.setItem(storageKey, theme);
-      } catch (e) {
-        // LocalStorage may be unavailable in restricted environments
-      }
+      } catch (e) {}
     }
   }
 
-  // Initialize theme from storage or system preference
-  let initialTheme;
+  let savedTheme = null;
   try {
-    initialTheme = localStorage.getItem(storageKey);
-  } catch (e) {
-    initialTheme = null;
+    savedTheme = localStorage.getItem(storageKey);
+  } catch (e) {}
+  if (savedTheme) {
+    applyTheme(savedTheme, false);
   }
-  if (!initialTheme) {
-    initialTheme = getSystemPreference();
-  }
-  applyTheme(initialTheme, false);
 
   if (themeToggle) {
     themeToggle.addEventListener('click', function () {
-      const currentTheme = root.getAttribute('data-theme') || 'light';
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      applyTheme(newTheme, true);
+      const isLight = root.getAttribute('data-theme') === 'light';
+      applyTheme(isLight ? 'dark' : 'light', true);
     });
   }
-
-  // Listen for system theme changes if user hasn't explicitly set a preference
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
-    try {
-      if (!localStorage.getItem(storageKey)) {
-        applyTheme(e.matches ? 'dark' : 'light', false);
-      }
-    } catch (err) {
-      applyTheme(e.matches ? 'dark' : 'light', false);
-    }
-  });
 
   // --- 2. Interactive Project Filtering ---
   const filterButtons = document.querySelectorAll('.filter-btn');
@@ -78,7 +60,6 @@
       button.addEventListener('click', function () {
         const filter = this.getAttribute('data-filter');
 
-        // Update active filter button state
         filterButtons.forEach(function (btn) {
           btn.classList.remove('active');
           btn.setAttribute('aria-pressed', 'false');
@@ -99,7 +80,6 @@
           }
         });
 
-        // Update screen-reader announcement
         if (filterStatus) {
           const filterName = button.textContent.trim();
           filterStatus.textContent = `Showing ${matchCount} ${
@@ -110,10 +90,31 @@
     });
   }
 
-  // --- 3. Dynamic Year in Footer ---
+  // --- 3. Interactive Contact Form Validation & Feedback ---
+  const inquiryForm = document.getElementById('inquiry-form');
+  const formFeedback = document.getElementById('form-feedback');
+
+  if (inquiryForm && formFeedback) {
+    inquiryForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const nameInput = document.getElementById('full-name');
+      const emailInput = document.getElementById('email-address');
+
+      if (!nameInput.value.trim() || !emailInput.value.trim()) {
+        formFeedback.textContent = 'Please fill out your name and email address.';
+        formFeedback.style.color = '#ffb3ba';
+        return;
+      }
+
+      formFeedback.textContent = `Thank you, ${nameInput.value.trim()}! Your inquiry has been sent.`;
+      formFeedback.style.color = '#fae896';
+      inquiryForm.reset();
+    });
+  }
+
+  // --- 4. Dynamic Footer Year ---
   const yearElement = document.getElementById('current-year');
   if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
   }
 })();
-
